@@ -36,38 +36,38 @@ class Dashboard extends Component {
           <Row>
             <Col lg={3} sm={6}>
               <StatsCard
-                bigIcon={<i className="pe-7s-server text-warning" />}
-                statsText="Capacity"
-                statsValue="105GB"
+                bigIcon={<i className="pe-7s-cloud text-info" />}
+                statsText="Освітленість"
+                statsValue="700ЛК"
                 statsIcon={<i className="fa fa-refresh" />}
-                statsIconText="Updated now"
+                statsIconText="Оновлено 5 с назад"
               />
             </Col>
             <Col lg={3} sm={6}>
               <StatsCard
-                bigIcon={<i className="pe-7s-wallet text-success" />}
-                statsText="Revenue"
-                statsValue="$1,345"
-                statsIcon={<i className="fa fa-calendar-o" />}
-                statsIconText="Last day"
+                bigIcon={<i className="pe-7s-settings text-warning" />}
+                statsText="Температура"
+                statsValue="37°C"
+                statsIcon={<i className="fa fa-refresh" />}
+                statsIconText="Оновлено 2 хв назад"
               />
             </Col>
             <Col lg={3} sm={6}>
               <StatsCard
-                bigIcon={<i className="pe-7s-graph1 text-danger" />}
-                statsText="Errors"
-                statsValue="23"
+                bigIcon={<i className="pe-7s-plug text-danger" />}
+                statsText="Напруга"
+                statsValue="380В"
                 statsIcon={<i className="fa fa-clock-o" />}
-                statsIconText="In the last hour"
+                statsIconText="Оновлено 5 хв назад"
               />
             </Col>
             <Col lg={3} sm={6}>
               <StatsCard
-                bigIcon={<i className="fa fa-twitter text-info" />}
-                statsText="Followers"
-                statsValue="+45"
-                statsIcon={<i className="fa fa-refresh" />}
-                statsIconText="Updated now"
+                bigIcon={<i className="pe-7s-gleam text-info" />}
+                statsText="Сила струму"
+                statsValue="2А"
+                statsIcon={<i className="fa fa-clock-o" />}
+                statsIconText="Оновлено 5 хв назад"
               />
             </Col>
           </Row>
@@ -76,9 +76,9 @@ class Dashboard extends Component {
               <Card
                 statsIcon="fa fa-history"
                 id="chartHours"
-                title="Users Behavior"
-                category="24 Hours performance"
-                stats="Updated 3 minutes ago"
+                title="Дійсні значення напруги"
+                category="24 години спостереження"
+                stats="Оновлено 5 хв назад"
                 content={
                   <div className="ct-chart">
                     <ChartistGraph
@@ -97,9 +97,9 @@ class Dashboard extends Component {
             <Col md={4}>
               <Card
                 statsIcon="fa fa-clock-o"
-                title="Email Statistics"
-                category="Last Campaign Performance"
-                stats="Campaign sent 2 days ago"
+                title="Генерація"
+                category="Протьогом доби"
+                stats="Оновлено 24 год назад"
                 content={
                   <div
                     id="chartPreferences"
@@ -116,12 +116,12 @@ class Dashboard extends Component {
           </Row>
 
           <Row>
-            <Col md={6}>
+            <Col md={12}>
               <Card
                 id="chartActivity"
-                title="2014 Sales"
-                category="All products including Taxes"
-                stats="Data information certified"
+                title="Діаграма потужності"
+                category="Активна та реактивна потужності"
+                stats="Оновлено щойно"
                 statsIcon="fa fa-check"
                 content={
                   <div className="ct-chart">
@@ -135,22 +135,6 @@ class Dashboard extends Component {
                 }
                 legend={
                   <div className="legend">{this.createLegend(legendBar)}</div>
-                }
-              />
-            </Col>
-
-            <Col md={6}>
-              <Card
-                title="Tasks"
-                category="Backend development"
-                stats="Updated 3 minutes ago"
-                statsIcon="fa fa-history"
-                content={
-                  <div className="table-full-width">
-                    <table className="table">
-                      <Tasks />
-                    </table>
-                  </div>
                 }
               />
             </Col>

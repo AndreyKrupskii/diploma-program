@@ -474,30 +474,28 @@ const iconsArray = [
 //
 // Data for Pie Chart
 var dataPie = {
-  labels: ["40%", "20%", "40%"],
-  series: [40, 20, 40]
+  labels: ["41%", "59%"],
+  series: [41, 59]
 };
 var legendPie = {
-  names: ["Open", "Bounce", "Unsubscribe"],
-  types: ["info", "danger", "warning"]
+  names: ["Генерація", "Простій"],
+  types: ["info", "danger"]
 };
 
 // Data for Line Chart
 var dataSales = {
   labels: [
-    "9:00AM",
-    "12:00AM",
-    "3:00PM",
-    "6:00PM",
-    "9:00PM",
-    "12:00PM",
-    "3:00AM",
-    "6:00AM"
+    "9:00",
+    "12:00",
+    "15:00",
+    "18:00",
+    "21:00",
+    "00:00",
+    "3:00",
+    "6:00"
   ],
   series: [
-    [287, 385, 490, 492, 554, 586, 698, 695],
-    [67, 152, 143, 240, 287, 335, 435, 437],
-    [23, 113, 67, 108, 190, 239, 307, 308]
+    [300, 387, 385, 250, 0, 0, 0, 25]
   ]
 };
 var optionsSales = {
@@ -529,29 +527,29 @@ var responsiveSales = [
   ]
 ];
 var legendSales = {
-  names: ["Open", "Click", "Click Second Time"],
-  types: ["info", "danger", "warning"]
+  names: ["Напруга, В"],
+  types: ["info"]
 };
 
 // Data for Bar Chart
 var dataBar = {
   labels: [
-    "Jan",
-    "Feb",
-    "Mar",
-    "Apr",
-    "Mai",
-    "Jun",
-    "Jul",
-    "Aug",
-    "Sep",
-    "Oct",
-    "Nov",
-    "Dec"
+    "07:00",
+    "08:00",
+    "09:00",
+    "10:00",
+    "11:00",
+    "12:00",
+    "13:00",
+    "14:00",
+    "15:00",
+    "16:00",
+    "17:00",
+    "18:00"
   ],
   series: [
-    [542, 443, 320, 780, 553, 453, 326, 434, 568, 610, 756, 895],
-    [412, 243, 280, 580, 453, 353, 300, 364, 368, 410, 636, 695]
+    [10, 12, 18, 20, 23, 28, 33, 34, 30, 28, 27, 23],
+    [5, 7, 8, 9, 12, 13, 15, 16, 16, 10, 7, 6]
   ]
 };
 var optionsBar = {
@@ -575,7 +573,7 @@ var responsiveBar = [
   ]
 ];
 var legendBar = {
-  names: ["Tesla Model S", "BMW 5 Series"],
+  names: ["Активна потужність, кВт", "Реактивна потужність, кВар"],
   types: ["info", "danger"]
 };
 

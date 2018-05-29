@@ -18,7 +18,7 @@ const dashboardRoutes = [
     path: "/user",
     name: "Параметри станцій",
     icon: "pe-7s-settings",
-    component: UserProfile
+    // component: UserProfile
   },
   {
     path: "/table",
@@ -43,14 +43,14 @@ const dashboardRoutes = [
     path: "/notifications",
     name: "Аварійні події",
     icon: "pe-7s-bell",
-    component: Notifications
+    // component: Notifications
   },
   {
     upgrade: true,
     path: "/upgrade",
     name: "Додати станцію",
     icon: "pe-7s-plus",
-    component: Upgrade
+    // component: Upgrade
   },
   { redirect: true, path: "/", to: "/dashboard", name: "Dashboard" }
 ];
