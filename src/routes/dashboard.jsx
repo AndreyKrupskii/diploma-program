@@ -15,8 +15,8 @@ const dashboardRoutes = [
     component: Dashboard
   },
   {
-    path: "/user",
-    name: "Параметри станцій",
+    path: "/station",
+    name: "Параметри станції",
     icon: "pe-7s-settings",
     // component: UserProfile
   },
@@ -35,7 +35,7 @@ const dashboardRoutes = [
   // { path: "/icons", name: "Icons", icon: "pe-7s-science", component: Icons },
   {
     path: "/maps",
-    name: "Розташування станцій",
+    name: "Розташування станції",
     icon: "pe-7s-map-marker",
     component: Maps
   },
@@ -48,7 +48,7 @@ const dashboardRoutes = [
   {
     upgrade: true,
     path: "/upgrade",
-    name: "Додати станцію",
+    name: "Дізнатися більше",
     icon: "pe-7s-plus",
     // component: Upgrade
   },

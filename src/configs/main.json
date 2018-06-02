@@ -2,5 +2,8 @@
   "mainWindow": {
     "width": 1024,
     "height": 600
+  },
+  "server": {
+    "url": "http://localhost:8080"
   }
 }
