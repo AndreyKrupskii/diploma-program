@@ -20,6 +20,7 @@
     "chartist": "0.10.1",
     "electron": "^2.0.1",
     "font-awesome": "^4.7.0",
+    "moment": "^2.22.2",
     "react": "16.2.0",
     "react-bootstrap": "0.32.1",
     "react-chartist": "0.13.1",

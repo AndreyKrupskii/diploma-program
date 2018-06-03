@@ -18,7 +18,7 @@ const dashboardRoutes = [
     path: "/station",
     name: "Параметри станції",
     icon: "pe-7s-settings",
-    // component: UserProfile
+    component: UserProfile
   },
   {
     path: "/table",
@@ -32,7 +32,7 @@ const dashboardRoutes = [
   //  icon: "pe-7s-news-paper",
   //  component: Typography
   // },
-  // { path: "/icons", name: "Icons", icon: "pe-7s-science", component: Icons },
+  //{ path: "/icons", name: "Icons", icon: "pe-7s-science", component: Icons },
   {
     path: "/maps",
     name: "Розташування станції",
@@ -43,14 +43,14 @@ const dashboardRoutes = [
     path: "/notifications",
     name: "Аварійні події",
     icon: "pe-7s-bell",
-    // component: Notifications
+    component: Notifications
   },
   {
     upgrade: true,
     path: "/upgrade",
-    name: "Дізнатися більше",
-    icon: "pe-7s-plus",
-    // component: Upgrade
+    name: "Про програму",
+    icon: "pe-7s-info",
+    component: Upgrade
   },
   { redirect: true, path: "/", to: "/dashboard", name: "Dashboard" }
 ];

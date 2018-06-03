@@ -1,10 +1,14 @@
 import React, { Component } from "react";
+import { connect } from 'react-redux';
 import { Grid, Row, Col, Table } from "react-bootstrap";
-
 import Card from "components/Card/Card.jsx";
-import { thArray, tdArray } from "variables/Variables.jsx";
+import { getTableData } from './../../modules/tables/ducks';
 
 class TableList extends Component {
+  componentDidMount() {
+    this.props.dispatch(getTableData());
+  }
+
   render() {
     return (
       <div className="content">
@@ -12,61 +16,30 @@ class TableList extends Component {
           <Row>
             <Col md={12}>
               <Card
-                title="Striped Table with Hover"
-                category="Here is a subtitle for this table"
+                title="Освітленість"
                 ctTableFullWidth
                 ctTableResponsive
                 content={
                   <Table striped hover>
                     <thead>
                       <tr>
-                        {thArray.map((prop, key) => {
-                          return <th key={key}>{prop}</th>;
-                        })}
+                      <th>ІД</th>
+                      <th>Показник</th>
+                      <th>Величина</th>
+                      <th>Одиниці</th>
+                      <th>Дата | Час</th>
                       </tr>
                     </thead>
                     <tbody>
-                      {tdArray.map((prop, key) => {
-                        return (
-                          <tr key={key}>
-                            {prop.map((prop, key) => {
-                              return <td key={key}>{prop}</td>;
-                            })}
-                          </tr>
-                        );
-                      })}
-                    </tbody>
-                  </Table>
-                }
-              />
-            </Col>
-
-            <Col md={12}>
-              <Card
-                plain
-                title="Striped Table with Hover"
-                category="Here is a subtitle for this table"
-                ctTableFullWidth
-                ctTableResponsive
-                content={
-                  <Table hover>
-                    <thead>
-                      <tr>
-                        {thArray.map((prop, key) => {
-                          return <th key={key}>{prop}</th>;
-                        })}
-                      </tr>
-                    </thead>
-                    <tbody>
-                      {tdArray.map((prop, key) => {
-                        return (
-                          <tr key={key}>
-                            {prop.map((prop, key) => {
-                              return <td key={key}>{prop}</td>;
-                            })}
-                          </tr>
-                        );
-                      })}
+                      {this.props.tables.sensors.map((sensor) => (
+                        <tr>
+                          <td>{sensor.id}</td>
+                          <td>{sensor.sensorName}</td>
+                          <td>{sensor.value}</td>
+                          <td>{sensor.unit}</td>
+                          <td>{sensor.createdAt}</td>
+                        </tr>
+                      ))}
                     </tbody>
                   </Table>
                 }
@@ -79,4 +52,12 @@ class TableList extends Component {
   }
 }
 
-export default TableList;
+/**
+ * Decorator for mapping state to pros
+ * @param {{}} state - redux state
+ */
+function mapStateToProps(state) {
+  return { tables: state.tables };
+}
+
+export default connect(mapStateToProps)(TableList);

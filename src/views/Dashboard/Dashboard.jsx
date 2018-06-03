@@ -1,24 +1,31 @@
 import React, { Component } from "react";
+import { connect } from 'react-redux';
 import ChartistGraph from "react-chartist";
 import { Grid, Row, Col } from "react-bootstrap";
-
 import { Card } from "components/Card/Card.jsx";
 import { StatsCard } from "components/StatsCard/StatsCard.jsx";
-import { Tasks } from "components/Tasks/Tasks.jsx";
-import {
-  dataPie,
-  legendPie,
-  dataSales,
-  optionsSales,
-  responsiveSales,
-  legendSales,
-  dataBar,
-  optionsBar,
-  responsiveBar,
-  legendBar
-} from "variables/Variables.jsx";
+import { dataPie, legendPie } from "variables/Variables.jsx";
+import { getLightGraphData, getPowerGraphData } from './../../modules/graphs/ducks';
+import diff from './../../libs/diff';
+
+let renderIterator = 0;
 
 class Dashboard extends Component {
+  componentDidMount() {
+    // set render interval
+    this.renderInterval = setInterval(() => (
+      this.setState({ renderInterval: renderIterator++ })
+    ), 5000);
+
+    // request data
+    this.props.dispatch(getLightGraphData());
+    this.props.dispatch(getPowerGraphData());
+  }
+
+  componentWillUnmount() {
+    clearInterval(this.renderInterval);
+  }
+
   createLegend(json) {
     var legend = [];
     for (var i = 0; i < json["names"].length; i++) {
@@ -29,6 +36,7 @@ class Dashboard extends Component {
     }
     return legend;
   }
+
   render() {
     return (
       <div className="content">
@@ -38,59 +46,59 @@ class Dashboard extends Component {
               <StatsCard
                 bigIcon={<i className="pe-7s-cloud text-info" />}
                 statsText="Освітленість"
-                statsValue="700ЛК"
-                statsIcon={<i className="fa fa-refresh" />}
-                statsIconText="Оновлено 5 с назад"
+                statsValue={`${this.props.sensors.light.value || 0}ЛК`}
+                statsIcon={<i className="fa fa-clock-o" />}
+                statsIconText={`Оновлено ${diff(Date.now(), this.props.sensors.light.timestamp)} назад`}
               />
             </Col>
             <Col lg={3} sm={6}>
               <StatsCard
                 bigIcon={<i className="pe-7s-settings text-warning" />}
                 statsText="Температура"
-                statsValue="37°C"
-                statsIcon={<i className="fa fa-refresh" />}
-                statsIconText="Оновлено 2 хв назад"
+                statsValue={`${this.props.sensors.temperature.value || 0}°C`}
+                statsIcon={<i className="fa fa-clock-o" />}
+                statsIconText={`Оновлено ${diff(Date.now(), this.props.sensors.temperature.timestamp)} назад`}
               />
             </Col>
             <Col lg={3} sm={6}>
               <StatsCard
                 bigIcon={<i className="pe-7s-plug text-danger" />}
                 statsText="Напруга"
-                statsValue="380В"
+                statsValue={`${this.props.sensors.voltage.value || 0}B`}
                 statsIcon={<i className="fa fa-clock-o" />}
-                statsIconText="Оновлено 5 хв назад"
+                statsIconText={`Оновлено ${diff(Date.now(), this.props.sensors.voltage.timestamp)} назад`}
               />
             </Col>
             <Col lg={3} sm={6}>
               <StatsCard
                 bigIcon={<i className="pe-7s-gleam text-info" />}
                 statsText="Сила струму"
-                statsValue="2А"
+                statsValue={`${this.props.sensors.current.value || 0}A`}
                 statsIcon={<i className="fa fa-clock-o" />}
-                statsIconText="Оновлено 5 хв назад"
+                statsIconText={`Оновлено ${diff(Date.now(), this.props.sensors.current.timestamp)} назад`}
               />
             </Col>
           </Row>
           <Row>
             <Col md={8}>
               <Card
-                statsIcon="fa fa-history"
                 id="chartHours"
-                title="Дійсні значення напруги"
-                category="24 години спостереження"
-                stats="Оновлено 5 хв назад"
+                title="Освітленність"
+                category="Протьогом доби"
+                stats={`Оновлено ${diff(Date.now(), this.props.sensors.light.timestamp)} назад`}
+                statsIcon="fa fa-history"
                 content={
                   <div className="ct-chart">
                     <ChartistGraph
-                      data={dataSales}
+                      data={{ series: this.props.graphs.light.series, labels: this.props.graphs.light.labels }}
                       type="Line"
-                      options={optionsSales}
-                      responsiveOptions={responsiveSales}
+                      options={this.props.graphs.light.options}
+                      responsiveOptions={this.props.graphs.light.responsive}
                     />
                   </div>
                 }
                 legend={
-                  <div className="legend">{this.createLegend(legendSales)}</div>
+                  <div className="legend">{this.createLegend(this.props.graphs.light.legend)}</div>
                 }
               />
             </Col>
@@ -121,20 +129,20 @@ class Dashboard extends Component {
                 id="chartActivity"
                 title="Діаграма потужності"
                 category="Активна та реактивна потужності"
-                stats="Оновлено щойно"
+                stats={`Оновлено ${diff(Date.now(), this.props.sensors.voltage.timestamp)} назад`}
                 statsIcon="fa fa-check"
                 content={
                   <div className="ct-chart">
                     <ChartistGraph
-                      data={dataBar}
+                      data={{ series: this.props.graphs.power.series, labels: this.props.graphs.power.labels }}
                       type="Bar"
-                      options={optionsBar}
-                      responsiveOptions={responsiveBar}
+                      options={this.props.graphs.power.options}
+                      responsiveOptions={this.props.graphs.power.responsive}
                     />
                   </div>
                 }
                 legend={
-                  <div className="legend">{this.createLegend(legendBar)}</div>
+                  <div className="legend">{this.createLegend(this.props.graphs.power.legend)}</div>
                 }
               />
             </Col>
@@ -145,4 +153,15 @@ class Dashboard extends Component {
   }
 }
 
-export default Dashboard;
+/**
+ * Decorator for mapping state to pros
+ * @param {{}} state - redux state
+ */
+function mapStateToProps(state) {
+  return {
+    sensors: state.sensors,
+    graphs: state.graphs
+  };
+}
+
+export default connect(mapStateToProps)(Dashboard);

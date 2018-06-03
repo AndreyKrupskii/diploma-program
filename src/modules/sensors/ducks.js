@@ -5,8 +5,8 @@ export const SET_SENSORS_DATA = 'solar/sensors/SET_SENSORS_DATA';
 const sensors = {
   light: { sensorId: 0 },
 	temperature: { sensorId: 1 },
-  current: { sensorId: 2 },
-  voltage: { sensorId: 3 },
+  voltage: { sensorId: 2 },
+  current: { sensorId: 3 },
   activePower: { sensorId: 4 },
   reactivePower: { sensorId: 5 }
 }

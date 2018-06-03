@@ -14,104 +14,20 @@ class Icons extends Component {
             <Col md={8} mdOffset={2}>
               <Card
                 hCenter
-                title="Light Bootstrap Dashboard PRO React"
-                category="Are you looking for more components? Please check our Premium Version of Light Bootstrap Dashboard React."
+                title="Cистема моніторингу ФЕС - Solar Monitor"
+                category="Дипломний проект студента 4 курсу групи ЕД-41 Крупського Андрія"
                 ctTableResponsive
                 ctTableFullWidth
                 ctTableUpgrade
                 content={
-                  <Table>
-                    <thead>
-                      <tr>
-                        <th />
-                        <th className="text-center">Free</th>
-                        <th className="text-center">PRO</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td>Components</td>
-                        <td>30</td>
-                        <td>60</td>
-                      </tr>
-                      <tr>
-                        <td>Plugins</td>
-                        <td>3</td>
-                        <td>13</td>
-                      </tr>
-                      <tr>
-                        <td>Example Pages</td>
-                        <td>7</td>
-                        <td>24</td>
-                      </tr>
-                      <tr>
-                        <td>Documentation</td>
-                        <td>
-                          <i className="fa fa-check text-success" />
-                        </td>
-                        <td>
-                          <i className="fa fa-check text-success" />
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>SASS Files</td>
-                        <td>
-                          <i className="fa fa-check text-success" />
-                        </td>
-                        <td>
-                          <i className="fa fa-check text-success" />
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>Login/Register/Lock Pages</td>
-                        <td>
-                          <i className="fa fa-times text-danger" />
-                        </td>
-                        <td>
-                          <i className="fa fa-check text-success" />
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>Premium Support</td>
-                        <td>
-                          <i className="fa fa-times text-danger" />
-                        </td>
-                        <td>
-                          <i className="fa fa-check text-success" />
-                        </td>
-                      </tr>
-                      <tr>
-                        <td />
-                        <td>Free</td>
-                        <td>Just $49</td>
-                      </tr>
-                      <tr>
-                        <td />
-                        <td>
-                          <Button
-                            href="#"
-                            round
-                            fill
-                            disabled
-                            bsStyle="default"
-                          >
-                            Current Version
-                          </Button>
-                        </td>
-                        <td>
-                          <Button
-                            target="_blank"
-                            href="http://www.creative-tim.com/product/light-bootstrap-dashboard-pro-react/?ref=lbd-react-free"
-                            round
-                            fill
-                            bsStyle="info"
-                          >
-                            Upgrade to PRO
-                          </Button>
-                        </td>
-                      </tr>
-                    </tbody>
-                  </Table>
+                  <div style={{padding: '10px 25px'}}>
+                      <p className="text-muted">
+                      На сьогоднішній день в Україні серед різних видів електростанції, що використовують ВДЕ, саме фотоелектростанції (надалі – ФЕС) одержали найбільшого поширення. Це не дивно, адже вони мають ряд переваг: доступність енергоресурсу, можливість приватного встановлення, простота в експлуатації, можливість продажі електроенергії у мережу по «зеленому тарифу». Та з іншого боку при мережевому використанні дискретність і мала прогнозованість енергетичних потоків може негативно вплинути на стан енергосистеми в цілому.
+                      </p>
+                      <p className="text-muted">
+                        Тому у цьому дипломному проекті розглядається можливе вирішення такої проблеми завдяки використанню автоматизованої системи збору даних щодо роботи та виробітку ФЕС для подальшого аналізу отриманої інфрмації та можливого прогнозування режимів роботи конкретної станції.
+                      </p>
+                  </div>
                 }
               />
             </Col>

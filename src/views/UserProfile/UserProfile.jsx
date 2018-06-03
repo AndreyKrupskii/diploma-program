@@ -13,7 +13,8 @@ import { FormInputs } from "components/FormInputs/FormInputs.jsx";
 import { UserCard } from "components/UserCard/UserCard.jsx";
 import Button from "components/CustomButton/CustomButton.jsx";
 
-import avatar from "assets/img/faces/face-3.jpg";
+import back from "assets/img/bg.jpg";
+import avatar from "assets/img/solar-energy.jpg";
 
 class UserProfile extends Component {
   render() {
@@ -23,110 +24,108 @@ class UserProfile extends Component {
           <Row>
             <Col md={8}>
               <Card
-                title="Edit Profile"
+                title="Технічні параметри фотостанції"
                 content={
                   <form>
+                    <h4>Фотомодулі</h4>
                     <FormInputs
-                      ncols={["col-md-5", "col-md-3", "col-md-4"]}
+                      ncols={["col-md-3", "col-md-3", "col-md-3", "col-md-3"]}
                       proprieties={[
                         {
-                          label: "Company (disabled)",
+                          label: "Тип фотомодуля",
                           type: "text",
                           bsClass: "form-control",
-                          placeholder: "Company",
-                          defaultValue: "Creative Code Inc.",
+                          defaultValue: "Полікристал",
                           disabled: true
                         },
                         {
-                          label: "Username",
+                          label: "Серія фотомодуля",
                           type: "text",
                           bsClass: "form-control",
-                          placeholder: "Username",
-                          defaultValue: "michael23"
+                          defaultValue: "AS-6P30",
+                          disabled: true
                         },
                         {
-                          label: "Email address",
-                          type: "email",
+                          label: "Кількість",
+                          type: "text",
                           bsClass: "form-control",
-                          placeholder: "Email"
-                        }
+                          defaultValue: "120",
+                          disabled: true
+                        },
+                        {
+                          label: "Виробник",
+                          type: "text",
+                          bsClass: "form-control",
+                          defaultValue: "Китай",
+                          disabled: true
+                        },
                       ]}
                     />
+                    <h4>Інвертори</h4>
                     <FormInputs
-                      ncols={["col-md-6", "col-md-6"]}
-                      proprieties={[
-                        {
-                          label: "First name",
-                          type: "text",
-                          bsClass: "form-control",
-                          placeholder: "First name",
-                          defaultValue: "Mike"
-                        },
-                        {
-                          label: "Last name",
-                          type: "text",
-                          bsClass: "form-control",
-                          placeholder: "Last name",
-                          defaultValue: "Andrew"
-                        }
-                      ]}
+                      ncols={["col-md-3", "col-md-3", "col-md-3", "col-md-3"]}
+                      proprieties={[{
+                        label: "Тип інвертора",
+                        type: "text",
+                        bsClass: "form-control",
+                        defaultValue: "Гібридний",
+                        disabled: true
+                      },
+                      {
+                        label: "Серія фотомодуля",
+                        type: "text",
+                        bsClass: "form-control",
+                        defaultValue: "Fronius ECO",
+                        disabled: true
+                      },
+                      {
+                        label: "Кількість",
+                        type: "text",
+                        bsClass: "form-control",
+                        defaultValue: "2",
+                        disabled: true
+                      },
+                      {
+                        label: "Виробник",
+                        type: "text",
+                        bsClass: "form-control",
+                        defaultValue: "Австрія",
+                        disabled: true
+                      }]}
                     />
                     <FormInputs
-                      ncols={["col-md-12"]}
-                      proprieties={[
-                        {
-                          label: "Adress",
-                          type: "text",
-                          bsClass: "form-control",
-                          placeholder: "Home Adress",
-                          defaultValue:
-                            "Bld Mihail Kogalniceanu, nr. 8 Bl 1, Sc 1, Ap 09"
-                        }
-                      ]}
-                    />
-                    <FormInputs
-                      ncols={["col-md-4", "col-md-4", "col-md-4"]}
-                      proprieties={[
-                        {
-                          label: "City",
-                          type: "text",
-                          bsClass: "form-control",
-                          placeholder: "City",
-                          defaultValue: "Mike"
-                        },
-                        {
-                          label: "Country",
-                          type: "text",
-                          bsClass: "form-control",
-                          placeholder: "Country",
-                          defaultValue: "Andrew"
-                        },
-                        {
-                          label: "Postal Code",
-                          type: "number",
-                          bsClass: "form-control",
-                          placeholder: "ZIP Code"
-                        }
-                      ]}
+                      ncols={["col-md-3", "col-md-3", "col-md-3", "col-md-3"]}
+                      proprieties={[{
+                        label: "Тип інвертора",
+                        type: "text",
+                        bsClass: "form-control",
+                        defaultValue: "Гібридний",
+                        disabled: true
+                      },
+                      {
+                        label: "Серія фотомодуля",
+                        type: "text",
+                        bsClass: "form-control",
+                        defaultValue: "Fronius Galvo",
+                        disabled: true
+                      },
+                      {
+                        label: "Кількість",
+                        type: "text",
+                        bsClass: "form-control",
+                        defaultValue: "1",
+                        disabled: true
+                      },
+                      {
+                        label: "Виробник",
+                        type: "text",
+                        bsClass: "form-control",
+                        defaultValue: "Австрія",
+                        disabled: true
+                      }]}
                     />
 
-                    <Row>
-                      <Col md={12}>
-                        <FormGroup controlId="formControlsTextarea">
-                          <ControlLabel>About Me</ControlLabel>
-                          <FormControl
-                            rows="5"
-                            componentClass="textarea"
-                            bsClass="form-control"
-                            placeholder="Here can be your description"
-                            defaultValue="Lamborghini Mercy, Your chick she so thirsty, I'm in that two seat Lambo."
-                          />
-                        </FormGroup>
-                      </Col>
-                    </Row>
-                    <Button bsStyle="info" pullRight fill type="submit">
-                      Update Profile
-                    </Button>
+
                     <div className="clearfix" />
                   </form>
                 }
@@ -134,36 +133,22 @@ class UserProfile extends Component {
             </Col>
             <Col md={4}>
               <UserCard
-                bgImage="https://ununsplash.imgix.net/photo-1431578500526-4d9613015464?fit=crop&fm=jpg&h=300&q=75&w=400"
+                bgImage={back}
                 avatar={avatar}
-                name="Mike Andrew"
-                userName="michael24"
+                name="Київська ФЕС"
                 description={
                   <span>
-                    "Lamborghini Mercy
+                    "Україна, Київська область,
                     <br />
-                    Your chick she so thirsty
+                    Обухівський район,
                     <br />
-                    I'm in that two seat Lambo"
+                    смт. Козин"
                   </span>
-                }
-                socials={
-                  <div>
-                    <Button simple>
-                      <i className="fa fa-facebook-square" />
-                    </Button>
-                    <Button simple>
-                      <i className="fa fa-twitter" />
-                    </Button>
-                    <Button simple>
-                      <i className="fa fa-google-plus-square" />
-                    </Button>
-                  </div>
                 }
               />
             </Col>
           </Row>
-        </Grid>>
+        </Grid>
       </div>
     );
   }

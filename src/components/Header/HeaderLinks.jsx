@@ -7,7 +7,7 @@ class HeaderLinks extends Component {
       <div>
         <i className="fa fa-globe" />
         <b className="caret" />
-        <span className="notification">5</span>
+        <span className="notification">2</span>
         <p className="hidden-lg hidden-md">Notification</p>
       </div>
     );
@@ -20,10 +20,8 @@ class HeaderLinks extends Component {
             noCaret
             id="basic-nav-dropdown"
           >
-            <MenuItem eventKey={2.1}>Повідомлення 1</MenuItem>
-            <MenuItem eventKey={2.2}>Повідомлення 2</MenuItem>
-            <MenuItem eventKey={2.3}>Повідомлення 3</MenuItem>
-            <MenuItem eventKey={2.4}>Повідомлення 4</MenuItem>
+            <MenuItem eventKey={2.1}>Відсутні показники напруги</MenuItem>
+            <MenuItem eventKey={2.2}>Відсутні показники струму</MenuItem>
           </NavDropdown>
         </Nav>
         <Nav pullRight>
@@ -35,13 +33,7 @@ class HeaderLinks extends Component {
             title="Налаштування"
             id="basic-nav-dropdown-right"
           >
-            <MenuItem eventKey={2.1}>Action</MenuItem>
-            <MenuItem eventKey={2.2}>Another action</MenuItem>
-            <MenuItem eventKey={2.3}>Something</MenuItem>
-            <MenuItem eventKey={2.4}>Another action</MenuItem>
-            <MenuItem eventKey={2.5}>Something</MenuItem>
-            <MenuItem divider />
-            <MenuItem eventKey={2.5}>Separated link</MenuItem>
+            <MenuItem eventKey={2.1} onClick={() => window.location.reload()}>Перевантажити сторінку</MenuItem>
           </NavDropdown>
         </Nav>
       </div>

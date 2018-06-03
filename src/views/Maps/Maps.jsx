@@ -10,14 +10,15 @@ import {
 const CustomMap = withScriptjs(
   withGoogleMap(props => (
     <GoogleMap
+      mapTypeId={"satellite"}
       defaultZoom={13}
-      defaultCenter={{ lat: 50.431782, lng: 30.516382 }}
+      defaultCenter={{ lat: 49.699181, lng: 31.107601 }}
       defaultOptions={{
         scrollwheel: false,
         zoomControl: true
       }}
     >
-      <Marker position={{ lat: 50.431782, lng: 30.516382 }} />
+      <Marker position={{ lat: 49.699181, lng: 31.107601 }} />
     </GoogleMap>
   ))
 );

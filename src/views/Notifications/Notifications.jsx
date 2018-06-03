@@ -10,170 +10,53 @@ class Notifications extends Component {
         <Grid fluid>
           <div className="card">
             <div className="header">
-              <h4 className="title">Notifications</h4>
-              <p className="category">
-                Handcrafted by{" "}
-                <a
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  href="https://github.com/igorprado"
-                >
-                  Igor Prado
-                </a>. Please checkout the{" "}
-                <a
-                  href="http://igorprado.com/react-notification-system/"
-                  rel="noopener noreferrer"
-                  target="_blank"
-                >
-                  full documentation.
-                </a>
-              </p>
+              <h4 className="title">Нотифікації системи</h4>
             </div>
             <div className="content">
               <Row>
                 <Col md={6}>
-                  <h5>Notifications Style</h5>
-                  <Alert bsStyle="info">
-                    <span>This is a plain notification</span>
-                  </Alert>
-                  <Alert bsStyle="info">
-                    <button type="button" aria-hidden="true" className="close">
-                      &#x2715;
-                    </button>
-                    <span>This is a notification with close button.</span>
-                  </Alert>
-                  <Alert bsStyle="info" className="alert-with-icon">
-                    <button type="button" aria-hidden="true" className="close">
-                      &#x2715;
-                    </button>
+                  <h5>Апаратні нотифікації</h5>
+                  <Alert bsStyle="warning" className="alert-with-icon">
                     <span data-notify="icon" className="pe-7s-bell" />
-                    <span data-notify="message">
-                      This is a notification with close button and icon.
+                    <span>Відсутні показники напруги. Можливі причини: нема зв'язку з вимірювальним
+                      органом, відсутність зв'язку вимірювальних органів з блоком обробки інформації,
+                      можливе коротке замикання.
                     </span>
                   </Alert>
-                  <Alert bsStyle="info" className="alert-with-icon">
-                    <button type="button" aria-hidden="true" className="close">
-                      &#x2715;
-                    </button>
+                  <Alert bsStyle="danger" className="alert-with-icon">
                     <span data-notify="icon" className="pe-7s-bell" />
-                    <span data-notify="message">
-                      This is a notification with close button and icon and have
-                      many lines. You can see that the icon and the close button
-                      are always vertically aligned. This is a beautiful
-                      notification. So you don't have to worry about the style.
+                    <span>Відсутні показники струму. Можливі причини: нема зв'язку з вимірювальним
+                      органом, відсутність зв'язку вимірювальних органів з блоком обробки інформації,
+                      можлива робота інвертора у холостому ході.
                     </span>
                   </Alert>
+
                 </Col>
                 <Col md={6}>
-                  <h5>Notification states</h5>
+                  <h5>Програмні нотифікації</h5>
                   <Alert bsStyle="info">
-                    <button type="button" aria-hidden="true" className="close">
-                      &#x2715;
-                    </button>
                     <span>
-                      <b> Info - </b> This is a regular notification made with
-                      bsStyle="info"
+                      Виконане оновлення програмного забезпечення.
                     </span>
                   </Alert>
                   <Alert bsStyle="success">
-                    <button type="button" aria-hidden="true" className="close">
-                      &#x2715;
-                    </button>
                     <span>
-                      <b> Success - </b> This is a regular notification made
-                      with bsStyle="success"
+                      Міграція бази даних успішно виконана.
                     </span>
                   </Alert>
                   <Alert bsStyle="warning">
-                    <button type="button" aria-hidden="true" className="close">
-                      &#x2715;
-                    </button>
                     <span>
-                      <b> Warning - </b> This is a regular notification made
-                      with bsStyle="warning"
+                      У сховище бази даних майже не залишилось вільної пам'яті.
                     </span>
                   </Alert>
                   <Alert bsStyle="danger">
-                    <button type="button" aria-hidden="true" className="close">
-                      &#x2715;
-                    </button>
                     <span>
-                      <b> Danger - </b> This is a regular notification made with
-                      bsStyle="danger"
+                      Помилка запису струмів та напруги.
                     </span>
                   </Alert>
                 </Col>
               </Row>
-              <br />
-              <br />
-              <div className="places-buttons">
-                <Row>
-                  <Col md={6} mdOffset={3} className="text-center">
-                    <h5>
-                      Notifications Places
-                      <p className="category">Click to view notifications</p>
-                    </h5>
-                  </Col>
-                </Row>
-                <Row>
-                  <Col md={2} mdOffset={3}>
-                    <Button
-                      bsStyle="default"
-                      block
-                      onClick={() => this.props.handleClick("tl")}
-                    >
-                      Top Left
-                    </Button>
-                  </Col>
-                  <Col md={2}>
-                    <Button
-                      bsStyle="default"
-                      block
-                      onClick={() => this.props.handleClick("tc")}
-                    >
-                      Top Center
-                    </Button>
-                  </Col>
-                  <Col md={2}>
-                    <Button
-                      bsStyle="default"
-                      block
-                      onClick={() => this.props.handleClick("tr")}
-                    >
-                      Top Right
-                    </Button>
-                  </Col>
-                </Row>
-                <Row>
-                  <Col md={2} mdOffset={3}>
-                    <Button
-                      bsStyle="default"
-                      block
-                      onClick={() => this.props.handleClick("bl")}
-                    >
-                      Bottom Left
-                    </Button>
-                  </Col>
-                  <Col md={2}>
-                    <Button
-                      bsStyle="default"
-                      block
-                      onClick={() => this.props.handleClick("bc")}
-                    >
-                      Bottom Center
-                    </Button>
-                  </Col>
-                  <Col md={2}>
-                    <Button
-                      bsStyle="default"
-                      block
-                      onClick={() => this.props.handleClick("br")}
-                    >
-                      Bottom Right
-                    </Button>
-                  </Col>
-                </Row>
-              </div>
+              <br/>
             </div>
           </div>
         </Grid>

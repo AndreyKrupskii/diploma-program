@@ -482,114 +482,11 @@ var legendPie = {
   types: ["info", "danger"]
 };
 
-// Data for Line Chart
-var dataSales = {
-  labels: [
-    "9:00",
-    "12:00",
-    "15:00",
-    "18:00",
-    "21:00",
-    "00:00",
-    "3:00",
-    "6:00"
-  ],
-  series: [
-    [300, 387, 385, 250, 0, 0, 0, 25]
-  ]
-};
-var optionsSales = {
-  low: 0,
-  high: 800,
-  showArea: false,
-  height: "245px",
-  axisX: {
-    showGrid: false
-  },
-  lineSmooth: true,
-  showLine: true,
-  showPoint: true,
-  fullWidth: true,
-  chartPadding: {
-    right: 50
-  }
-};
-var responsiveSales = [
-  [
-    "screen and (max-width: 640px)",
-    {
-      axisX: {
-        labelInterpolationFnc: function(value) {
-          return value[0];
-        }
-      }
-    }
-  ]
-];
-var legendSales = {
-  names: ["Напруга, В"],
-  types: ["info"]
-};
-
-// Data for Bar Chart
-var dataBar = {
-  labels: [
-    "07:00",
-    "08:00",
-    "09:00",
-    "10:00",
-    "11:00",
-    "12:00",
-    "13:00",
-    "14:00",
-    "15:00",
-    "16:00",
-    "17:00",
-    "18:00"
-  ],
-  series: [
-    [10, 12, 18, 20, 23, 28, 33, 34, 30, 28, 27, 23],
-    [5, 7, 8, 9, 12, 13, 15, 16, 16, 10, 7, 6]
-  ]
-};
-var optionsBar = {
-  seriesBarDistance: 10,
-  axisX: {
-    showGrid: false
-  },
-  height: "245px"
-};
-var responsiveBar = [
-  [
-    "screen and (max-width: 640px)",
-    {
-      seriesBarDistance: 5,
-      axisX: {
-        labelInterpolationFnc: function(value) {
-          return value[0];
-        }
-      }
-    }
-  ]
-];
-var legendBar = {
-  names: ["Активна потужність, кВт", "Реактивна потужність, кВар"],
-  types: ["info", "danger"]
-};
-
 module.exports = {
   style, // For notifications (App container and Notifications view)
   thArray,
   tdArray, // For tables (TableList view)
   iconsArray, // For icons (Icons view)
   dataPie,
-  legendPie,
-  dataSales,
-  optionsSales,
-  responsiveSales,
-  legendSales,
-  dataBar,
-  optionsBar,
-  responsiveBar,
-  legendBar // For charts (Dashboard view)
+  legendPie
 };

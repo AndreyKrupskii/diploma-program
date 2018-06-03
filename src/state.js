@@ -1,6 +1,8 @@
 import { combineReducers } from 'redux';
 import socket from './modules/socket/ducks';
 import sensors from './modules/sensors/ducks';
+import graphs from './modules/graphs/ducks';
+import tables from './modules/tables/ducks';
 
 // define global action types constants
 export const RESET_STATE = 'solar/root/RESET_STATE';
@@ -8,7 +10,9 @@ export const RESET_STATE = 'solar/root/RESET_STATE';
 // define root reducer
 const combinedReducers = combineReducers({
 	socket,
-	sensors
+	sensors,
+	graphs,
+	tables
 });
 
 /**
