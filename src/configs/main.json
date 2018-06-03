@@ -4,6 +4,6 @@
     "height": 600
   },
   "server": {
-    "url": "http://localhost:8080"
+    "url": "https://solar-monitor.herokuapp.com"
   }
 }

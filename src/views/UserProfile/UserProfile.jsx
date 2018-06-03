@@ -29,7 +29,7 @@ class UserProfile extends Component {
                   <form>
                     <h4>Фотомодулі</h4>
                     <FormInputs
-                      ncols={["col-md-3", "col-md-3", "col-md-3", "col-md-3"]}
+                      ncols={["col-md-6", "col-md-6"]}
                       proprieties={[
                         {
                           label: "Тип фотомодуля",
@@ -44,7 +44,12 @@ class UserProfile extends Component {
                           bsClass: "form-control",
                           defaultValue: "AS-6P30",
                           disabled: true
-                        },
+                        }
+                      ]}
+                    />
+                    <FormInputs
+                      ncols={["col-md-6", "col-md-6"]}
+                      proprieties={[
                         {
                           label: "Кількість",
                           type: "text",
@@ -63,7 +68,7 @@ class UserProfile extends Component {
                     />
                     <h4>Інвертори</h4>
                     <FormInputs
-                      ncols={["col-md-3", "col-md-3", "col-md-3", "col-md-3"]}
+                      ncols={["col-md-6", "col-md-6"]}
                       proprieties={[{
                         label: "Тип інвертора",
                         type: "text",
@@ -94,26 +99,13 @@ class UserProfile extends Component {
                       }]}
                     />
                     <FormInputs
-                      ncols={["col-md-3", "col-md-3", "col-md-3", "col-md-3"]}
-                      proprieties={[{
-                        label: "Тип інвертора",
-                        type: "text",
-                        bsClass: "form-control",
-                        defaultValue: "Гібридний",
-                        disabled: true
-                      },
-                      {
-                        label: "Серія фотомодуля",
-                        type: "text",
-                        bsClass: "form-control",
-                        defaultValue: "Fronius Galvo",
-                        disabled: true
-                      },
+                      ncols={["col-md-6", "col-md-6"]}
+                      proprieties={[
                       {
                         label: "Кількість",
                         type: "text",
                         bsClass: "form-control",
-                        defaultValue: "1",
+                        defaultValue: "4",
                         disabled: true
                       },
                       {
@@ -124,7 +116,6 @@ class UserProfile extends Component {
                         disabled: true
                       }]}
                     />
-
 
                     <div className="clearfix" />
                   </form>
